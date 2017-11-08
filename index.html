@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Myhub</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="dist/app.min.css">
+	</head>
+	<body>
+
+		<!-- header -->
+		<header>
+			<section class="hero">
+				<div class="hero-body">
+					<div class="container">
+						<div class="title"><i class="fa fa-github" aria-hidden="true"></i>  Myhub</div>
+					</div>
+				</div>
+			</section>
+		</header>
+		<main class="container">
+				<input type="text" class="input" id="search" placeholder="Search repositories">
+				<br><br>
+		</main>
+
+
+	<!-- handlebars templates -->
+	<script id="template" type="text/x-handlebars-template">
+		{{#if language}}
+			<div class="card">
+					<div class="card-header">
+								<div class="card-header-icon"><i class="fa fa-book"></i></div>
+								<a class="card-header-title" href="{{ html_url }}">{{ name }}</a>
+					</div>
+					<div class="card-content">
+								{{ description }}
+								<br><br>
+								<div class="field is-grouped is-grouped-multiline">
+											<div class="control">
+														<div class="tags has-addons">
+																	<i class="fa fa-code-fork tag is-dark " aria-hidden="true"></i>
+																	<span class="tag is-link">{{ forks_count }}</span>
+														</div>
+											</div>
+											<div class="control">
+														<div class="tags has-addons">
+																	<i class="fa fa-star tag is-dark " aria-hidden="true"></i>
+																	<span class="tag is-success">{{ stargazers_count }}</span>
+														</div>
+											</div>
+											<div class="control">
+														<div class="tags has-addons">
+																	<i class="fa fa-info-circle tag is-dark " aria-hidden="true"></i>
+																	<span class="tag is-danger">{{ open_issues_count }}</span>
+														</div>
+											</div>
+											<div class="control">
+														<div class="tags has-addons">
+																	<i class="fa fa-code tag is-dark " aria-hidden="true"></i>
+																	<span class="tag is-warning">{{ language }}</span>
+														</div>
+											</div>
+								</div>
+					</div>
+			</div>
+		{{/if}}
+	</script>
+
+	<!-- scripts -->
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+	<script src="dist/app.min.js"></script>
+</body>
+</html>
